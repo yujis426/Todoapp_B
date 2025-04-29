@@ -6,7 +6,6 @@ type Todo = {
   readonly id: number;
 };
 
-
 // Todo コンポーネントの定義
 const Todo: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]); // Todo配列として初期化
@@ -56,7 +55,6 @@ const Todo: React.FC = () => {
       return newTodos;
     });
   };
-
 
   return (
     <div>
