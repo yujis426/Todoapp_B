@@ -39,7 +39,7 @@ select, input[type='text'], button[type='submit'] {
 
 
 button[type='submit'] {
-  background-color: #007BFF;
+  background-color: #ff7b00;
   color: #fff;
   border: none;
   cursor: pointer;

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import localforage from 'localforage';
 import { useNavigate } from 'react-router-dom';
+import type { Todo } from '../types/todo';
 
 // "Todo" 型の定義をコンポーネント外で行います
-type Todo = {
-  title: string;
-  readonly id: number;
-  completed_flg: boolean;
-  delete_flg: boolean, // <-- 追加
-};
+// type Todo = {
+//   title: string;
+//   readonly id: number;
+//   completed_flg: boolean;
+//   delete_flg: boolean, // <-- 追加
+// };
 
 type Filter = 'all' | 'completed' | 'unchecked' | 'delete';
 

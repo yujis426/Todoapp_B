@@ -1,15 +1,19 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Top from './components/top';
-import Todos from './components/index';
+import Todos from './components/Todos';
+import CalendarComponent from './components/CalendarComponent';
+import DetailPage from './components/DetailPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Top />} />
-        <Route path="/todos" element={<Todos />} />
+        <Route path="/components/todos" element={<Todos />} />
+        <Route path="/calendar" element={<CalendarComponent />} />
+        <Route path="/detail/:date" element={<DetailPage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
