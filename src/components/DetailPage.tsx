@@ -62,11 +62,12 @@ const DetailPage = () => {
   const getFilteredTodos = () => {
     switch (filter) {
       case 'completed':
-        return todos.filter(t => t.completed_flg && !t.delete_flg);
+        return todos.filter(t => t.progress === 100 && !t.delete_flg);
       case 'unchecked':
-        return todos.filter(t => !t.completed_flg && !t.delete_flg);
+        return todos.filter(t => t.progress < 100 && !t.delete_flg);
       case 'delete':
         return todos.filter(t => t.delete_flg);
+      case 'all':
       default:
         return todos.filter(t => !t.delete_flg);
     }
