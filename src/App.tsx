@@ -9,9 +9,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Top />} />
-        <Route path="/components/todos" element={<Todos />} />
-        <Route path="/calendar" element={<CalendarComponent />} />
         <Route path="/detail/:date" element={<DetailPage />} />
+        <Route path="/calendar" element={<CalendarComponent />} />
+       
       </Routes>
     </Router>
   );

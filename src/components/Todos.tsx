@@ -14,7 +14,7 @@ import type { Todo } from '../types/todo';
 type Filter = 'all' | 'completed' | 'unchecked' | 'delete';
 
 // Todo コンポーネントの定義
-const Todo: React.FC = () => {
+const Todos: React.FC = () => {
   const navigate = useNavigate();
   const [todos, setTodos] = useState<Todo[]>([]); // Todo配列として初期化
   const [text, setText] = useState(''); // テキスト入力用
@@ -194,4 +194,4 @@ return (
 );
 };
 
-export default Todo;
+export default Todos;

@@ -4,42 +4,38 @@ body, html {
   width: 100%;
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0; /* 微妙なグレーの背景色 */
+  background-color: #f0f0f0;
 }
 
-
 #root {
-  max-width: 1300px; /* 最大幅を1600pxに拡大 */
+  max-width: 1300px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
-
 
 .todo-container {
   background-color: #d3d3d3;
   padding: 2em;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%; /* 幅を100%に設定 */
-  max-width: 1200px; /* 最大幅を1200pxに設定 */
-  margin: 1em; /* 中央寄せ */
-  box-sizing: border-box; /* パディングとボーダーを含む */
+  width: 100%;
+  max-width: 1200px;
+  margin: 1em;
+  box-sizing: border-box;
 }
-
 
 select, input[type='text'], button[type='submit'] {
   width: 95%;
   margin: 0.5em 0;
-  padding: 0.75em; /* パディングを大きく */
-  font-size: 1.2em; /* フォントサイズを大きく */
+  padding: 0.75em;
+  font-size: 1.2em;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-
 button[type='submit'] {
-  background-color: #ff7b00;
+  background-color: #fb923c;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -49,54 +45,55 @@ button[type='submit'] {
   padding: 0.5em 1em;
 }
 
-
 button[type='submit']:hover {
   background-color: #0056b3;
 }
 
-
 ul {
   list-style: none;
   padding: 0;
-  width: 100%; /* 幅を100%に設定 */
+  width: 100%;
 }
-
 
 li {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f9f9f9;/* 背景色を白に設定 */
-  padding: 1em; /* パディングを大きく */
-  margin: 1em 0; /* マージンを大きく */
+  flex-direction: column;
+  background: #f9f9f9;
+  padding: 1em;
+  margin: 1em 0;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* リストアイテムのシャドウを追加 */
-  width: 100%; /* 幅を100%に設定 */
-  box-sizing: border-box; /* パディングとボーダーを含む */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
 
+li .todo-display-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
 
 li input[type='text'] {
   flex-grow: 1;
   margin-right: 1em;
-  border: 1px solid #ccc; /* ボーダーを追加 */
-  border-radius: 5px; /* ボーダーの角を丸く */
-  background: #fff; /* 背景色を白に設定 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
   outline: none;
-  font-size: 1.2em; /* フォントサイズを大きく */
-  padding: 0.5em; /* パディングを追加 */
-  box-sizing: border-box; /* パディングとボーダーを含む */
+  font-size: 1.2em;
+  padding: 0.5em;
+  box-sizing: border-box;
 }
-
 
 li input[type='checkbox'] {
   margin-right: 1em;
-  transform: scale(1.5); /* チェックボックスを大きく */
+  transform: scale(1.5);
 }
 
-
 li button {
-  padding: 0.3em 0.6em; 
+  padding: 0.3em 0.6em;
   background-color: #dc3545;
   color: #fff;
   border: none;
@@ -105,13 +102,136 @@ li button {
   width: 100px;
 }
 
-
 li button:hover {
   background-color: #c82333;
 }
-
 
 button[disabled] {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.btn-orange {
+  background-color: #fb923c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.75em;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+select.w-fit {
+  width: fit-content;
+}
+
+.todo-display-row {
+  padding: 1rem;
+  background-color: #fff3eb;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.todo-form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.label {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.progress-select,
+.date-input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90px;
+}
+
+.task-title-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.btn-edit {
+  background-color: #38bdf8;
+}
+
+.btn-delete {
+  background-color: #f87171;
+}
+
+.edit-area {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+.date-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.date-input {
+  width: 120px !important;
+  flex-grow: 0 !important;
+  flex: none;
+  flex-grow: 0; /* ← これを追加！ */
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.label.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.todo-note {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: #fff;
+  resize: vertical;
+}
+
+/* index.css に追加 */
+.disabled-task {
+  background-color: #e5e7eb; /* グレー背景 */
+  color: #9ca3af;            /* グレー文字 */
+  cursor: not-allowed;
+}
+

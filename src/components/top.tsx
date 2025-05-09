@@ -1,25 +1,22 @@
 import { useNavigate } from 'react-router-dom';
-
+import dayjs from 'dayjs';
 
 const Top = () => {
-  const navigate = useNavigate(); // ナビゲーション関数を取得
+  const navigate = useNavigate();
 
-
-  const goToTodos = () => {
-    // 条件に応じて移動先を変更することも可能
-    navigate('/todos');
+  const goToTodayDetail = () => {
+    const today = dayjs().format('YYYY-MM-DD'); // 例: "2025-05-03"
+    navigate(`/detail/${today}`);
   };
-
 
   return (
     <div>
       <h1>トップページ</h1>
-      <button onClick={goToTodos}>
-        Todoリストへ
+      <button onClick={goToTodayDetail}>
+        今日のTodo（詳細）ページへ
       </button>
     </div>
   );
 };
-
 
 export default Top;
