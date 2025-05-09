@@ -148,7 +148,9 @@ select.w-fit {
 .form-group {
   display: flex;
   flex-direction: column;
-  min-width: 120px;
+  align-items: center; /* ← 中央揃えを追加 */
+  justify-content: center;
+  min-width: 100px;     /* 必要に応じて調整 */
 }
 
 .label {
@@ -156,9 +158,16 @@ select.w-fit {
   margin-bottom: 4px;
 }
 
-.progress-select,
+.progress-select {
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80px;        /* プルダウン用に少し広め */
+  text-align: center;  /* 数字中央寄せ */
+}
+
 .date-input {
-  padding: 0.4rem;
+  padding: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 90px;
